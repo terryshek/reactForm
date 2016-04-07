@@ -1,0 +1,21 @@
+{
+  "name": "react-tutorials",
+  "description": "",
+  "main": "webpack.config.js",
+  "authors": [
+    "terryshek <terry_shekhinshing@msn.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/terryshek/reactForm",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-without-jquery": "~0.6.1"
+  }
+}
