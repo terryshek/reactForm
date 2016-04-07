@@ -1,8 +1,12 @@
 import React, {Component} from "react";
-import { Link, Router } from "react-router";
+import { Link } from "react-router";
+import RaisedButton from 'material-ui/lib/raised-button';
+import FontIcon from 'material-ui/lib/font-icon';
+import ActionAndroid from 'material-ui/lib/svg-icons/action/android';
+import AppBar from 'material-ui/lib/app-bar';
 const style = {
-  "padding":"10px"
-}
+  margin: 12,
+};
 class Layout extends Component {
   constructor() {
     super();
@@ -12,16 +16,19 @@ class Layout extends Component {
   }
   navigate(){
     console.log(this.context);
-    Router.push("/");
+    this.props.push(null,"/");
   }
   render() {
     return (
       <div className="container text-center">
-        <h1>KillerNews.net</h1>
+      <AppBar
+ title="Title"
+ iconClassNameRight="muidocs-icon-navigation-expand-more"
+/>
         {this.props.children}
         <Link to="archives" ><button style={style} className="btn btn-primary">archives</button></Link>
         <Link to="settings" ><button style={style} className="btn btn-primary">Settings</button></Link>
-        <button onClick={this.navigate.bind(this)}>Featured</button>
+        <RaisedButton label="Featured" onClick={this.navigate.bind(this)} secondary={true} style={style} icon={<ActionAndroid />} />
       </div>
     );
   }
